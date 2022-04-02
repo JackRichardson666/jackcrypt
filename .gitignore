@@ -10,3 +10,5 @@
 *.html
 *.exe
 *.ico
+dist/*
+*.spec
