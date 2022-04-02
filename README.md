@@ -43,4 +43,4 @@ Copyright © 2022 [JackRichardson](https://github.com/JackRichardson666).<br />
 This project is [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html) licensed.
 
 ***
-_This README was created with ❤️ by [Jack Richardson](https://github.com/JackRichardson666)_
+_This project was created with ❤️ by [Jack Richardson](https://github.com/JackRichardson666)_
