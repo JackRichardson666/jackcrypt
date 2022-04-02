@@ -1,3 +1,4 @@
+import sys
 import base64
 import pyperclip
 from jacklib import *
@@ -16,7 +17,7 @@ def get_file_size(filename):
             return len(f.read())
     except FileNotFoundError:
         print("File not found")
-        exit()
+        sys.exit()
 
 def get_text(filename):
     try:
@@ -25,7 +26,7 @@ def get_text(filename):
             return text
     except FileNotFoundError:
         print("File not found")
-        exit()
+        sys.exit()
 
 def write_text(filename, text):
     try:
@@ -36,7 +37,7 @@ def write_text(filename, text):
                 f.write(text.encode())
     except FileNotFoundError:
         print("File not found")
-        exit()
+        sys.exit()
 
 def encrypt_action():
     filename = input("Filename: ")
@@ -54,7 +55,7 @@ def encrypt_action():
         encrypt_key = input("Key: ")
     else:
         print("Invalid input")
-        exit()
+        sys.exit()
 
     question2 = input("Encrypt? (y/n): ")
 
@@ -71,10 +72,10 @@ def encrypt_action():
         print(f"Encrypted! ({beforesize} -> {aftersize})")
     elif (question2 == "n"):
         print("Aborted")
-        exit()
+        sys.exit()
     else:
         print("Invalid input")
-        exit()
+        sys.exit()
 
 def decrypt_action():
     filename = input("Filename: ")
@@ -91,10 +92,10 @@ def decrypt_action():
         print(f"Decrypted! ({beforesize} -> {aftersize})")
     elif (question1 == "n"):
         print("Aborted")
-        exit()
+        sys.exit()
     else:
         print("Invalid input")
-        exit()
+        sys.exit()
 
 action = input("Action: ")
 
@@ -104,4 +105,4 @@ elif (action == "2"):
     decrypt_action()
 else:
     print("Invalid input")
-    exit()
+    sys.exit()
