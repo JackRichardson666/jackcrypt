@@ -1,4 +1,5 @@
 import base64
+import pyperclip
 from jacklib import *
 
 '''
@@ -43,6 +44,10 @@ def encrypt_action():
     if(question1 == "y"):
         encrypt_key = jacklib_createpwd()
         print("Key: " + encrypt_key.decode())
+
+        pyperclip.copy(encrypt_key.decode())
+        print("Key copied to clipboard\n")
+
     elif (question1 == "n"):
         encrypt_key = input("Key: ")
     else:
