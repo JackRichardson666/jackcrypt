@@ -3,5 +3,4 @@ random
 secrets
 cryptography
 Crypto
-base64
 pyperclip

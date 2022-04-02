@@ -2,12 +2,6 @@ import base64
 import pyperclip
 from jacklib import *
 
-'''
-encrypt_key = jacklib_createpwd()
-
-data = jacklib_SHA256(text.encode(), encrypt_key)
-'''
-
 print("""
 \n
 Actions available:
