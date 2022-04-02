@@ -16,6 +16,14 @@ Actions available:
 \n\n
 """)
 
+def get_file_size(filename):
+    try:
+        with open(filename, 'rb') as f:
+            return len(f.read())
+    except FileNotFoundError:
+        print("File not found")
+        exit()
+
 def get_text(filename):
     try:
         with open(filename, 'rb') as f:
@@ -63,8 +71,10 @@ def encrypt_action():
         except:
             b64data = base64.b64encode(get_text(filename))
             data = jacklib_SHA256(b64data, encrypt_key)
-        print("Encrypted!")
+        beforesize = get_file_size(filename)
         write_text(filename, data[0])
+        aftersize = get_file_size(filename)
+        print(f"Encrypted! ({beforesize} -> {aftersize})")
     elif (question2 == "n"):
         print("Aborted")
         exit()
@@ -81,9 +91,10 @@ def decrypt_action():
         base64data = jacklib_SHA256_Decode(get_text(filename), encrypt_key)
 
         dbase64data = base64.b64decode(base64data)
-
+        beforesize = get_file_size(filename)
         write_text(filename, dbase64data)
-        print("Decrypted!")
+        aftersize = get_file_size(filename)
+        print(f"Decrypted! ({beforesize} -> {aftersize})")
     elif (question1 == "n"):
         print("Aborted")
         exit()
