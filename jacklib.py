@@ -95,7 +95,7 @@ def jacklib_SHA256(text, created_key):
     return Fernet(created_key).encrypt(text), created_key
 
 def jacklib_SHA256_Decode(encrypted, key):
-    return Fernet(key).decrypt(encrypted.decode())
+    return Fernet(key).decrypt(encrypted)
 
 #AES
 def jacklib_AES(text, password):
