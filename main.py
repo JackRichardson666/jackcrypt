@@ -1,3 +1,4 @@
+import base64
 from jacklib import *
 
 '''
@@ -26,7 +27,10 @@ def get_text(filename):
 def write_text(filename, text):
     try:
         with open(filename, 'wb') as f:
-            f.write(text.decode())
+            try:
+                f.write(text)
+            except:
+                f.write(text.encode())
     except FileNotFoundError:
         print("File not found")
         exit()
@@ -49,9 +53,11 @@ def encrypt_action():
 
     if(question2 == "y"):
         try:
-            data = jacklib_SHA256(get_text(filename).encode(), encrypt_key)
+            b64data = base64.b64encode(get_text(filename))
+            data = jacklib_SHA256(b64data.encode(), encrypt_key)
         except:
-            data = jacklib_SHA256(get_text(filename), encrypt_key)
+            b64data = base64.b64encode(get_text(filename))
+            data = jacklib_SHA256(b64data, encrypt_key)
         print("Encrypted!")
         write_text(filename, data[0])
     elif (question2 == "n"):
@@ -67,11 +73,11 @@ def decrypt_action():
     question1 = input("Decrypt? (y/n): ")
 
     if(question1 == "y"):
-        try:
-            data = jacklib_SHA256_Decode(get_text(filename).encode(), encrypt_key)
-        except:
-            data = jacklib_SHA256_Decode(get_text(filename), encrypt_key)
-        write_text(filename, data)
+        base64data = jacklib_SHA256_Decode(get_text(filename), encrypt_key)
+
+        dbase64data = base64.b64decode(base64data)
+
+        write_text(filename, dbase64data)
         print("Decrypted!")
     elif (question1 == "n"):
         print("Aborted")
