@@ -40,8 +40,8 @@ PLEASE READ THIS!!!!!
  ~Я прекрасно знаю, что этот код очень плох в реализации и может быть сокращен во много раз, но поскольку это моя первая общедоступная библиотека, пожалуйста, не судите меня строго и не выливайте на меня чан с дерьмом ^^
  ~I know perfectly well that this code is very bad to implement and could be cut down many times, but since this is my first shared library, please don't judge me harshly and don't pour a layer of shit on me ^^
 
- ~Пожалуйста, оставьте авторские права на меня и мою библиотеку, и я также попрошу Вас не использовать jacklib для вредоносных и корыстных целей (вирусы, ботнеты, трояны и аналогичные вредоносные программы)
- ~Please leave the copyright on me and my library, and I will also ask you not to use jacklib for malicious and self-serving purposes (viruses, botnets, Trojans, and similar malicious programs)
+ ~Пожалуйста, оставьте авторские права на меня и мою библиотеку
+ ~Please leave the copyright on me and my library
 
 Made with love by Jack Richardson ❤
 '''
